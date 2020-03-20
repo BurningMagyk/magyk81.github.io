@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<!-----------------------
+	Clock v1.0
+	by Robin Campos
+	5/19/2017
+	Storylab Interactive
+------------------------>
+
+<html>
+
+<body>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body
+    {
+        width: 100%;
+        height: 100%
+    }
+
+    canvas
+    {
+        display: block;
+    }
+</style>
+
+<script>
+    "use strict";
+
+	var maxCanvasDim = 4000; // The stars won't show for more than 4000 pixels wide and high
+
+    var canvasWidth = window.innerWidth;
+    var canvasHeight = window.innerHeight;
+    var canvasLength;
+    var clockPercCanvas = 0.8;
+    var widthMid;
+    var heightMid;
+    var clockRadius;
+    var clockDiameter;
+    var sunDiameter = 100;
+
+    var totalMinutes = 0;
+    var totalSeconds = 0;
+    var currentSeconds = 0;
+    var xHourHand;
+    var yHourHand;
+    var xMinuteHand;
+    var yMinuteHand;
+    var xSecondHand;
+    var ySecondHand;
+	
+	var xStarMap = [];
+	var yStarMap = [];
+	var iStarMap = []; // intensity
+
+	var xMarks = [];
+	var yMarks = [];
+	
+	var hourMod = 0;
+	var imgBlackSolid;
+	var imgBlackTrans;
+	var imgWhiteSolid;
+	var imgWhiteTrans;
+	var gokuFont;
+	var otherFont;
+	
+	//var apiKey = "0e605609d46a4bcc06edfcfec0b0998b";
+	
+	function preload()
+	{
+		imgBlackSolid = loadImage("black_solid_logo.png");
+		imgBlackTrans = loadImage("black_transparent_logo.png");
+		imgWhiteSolid = loadImage("white_solid_logo.png");
+		imgWhiteTrans = loadImage("white_transparent_logo.png");
+		gokuFont = loadFont("SourceSansPro-Regular.otf");
+		otherFont = loadFont("SourceSansPro-Regular.otf");
+	}
+	
+	/* This event listener only affects the aesthetic display, not the clock's hands */
+	document.addEventListener('keydown', function(event)
+	{
+		if (event.keyCode == 65) hourMod -= 5; // A
+		else if (event.keyCode == 68) hourMod += 5; // D
+		else if (event.keyCode == 82) hourMod = 0; // R
+	});
+
+	var i;
+	var j;
+	for (i = 0; i < 60 ; i++)
+	{
+		xMarks.push(Math.cos(i * Math.PI / 30));
+		yMarks.push(Math.sin(i * Math.PI / 30));
+	}
+
+	var rand;
+    function setup()
+    {
+        createCanvas(canvasWidth, canvasHeight);
+
+		/* Set up coordinates for the stars */
+		for (i = 0; i < maxCanvasDim; i++)
+		{
+			for (j = 0; j < maxCanvasDim; j++)
+			{
+				rand = Math.random();
+				if (rand < 0.001)
+				{
+					xStarMap.push(i);
+					yStarMap.push(j);
+					iStarMap.push((rand * 10000) % 3);
+				}
+			}
+		}
+		
+        if (canvasWidth > canvasHeight) { canvasLength = canvasHeight; }
+        else { canvasLength = canvasWidth; }
+		var clockLength = canvasLength * clockPercCanvas;
+        ellipse(canvasWidth / 2, canvasHeight / 2, clockLength, clockLength);
+    }
+	
+	function windowResized()
+	{
+		canvasWidth = window.innerWidth;
+		canvasHeight = window.innerHeight;
+		resizeCanvas(canvasWidth, canvasHeight);
+	    if (canvasWidth > canvasHeight) { canvasLength = canvasHeight; }
+        else { canvasLength = canvasWidth; }
+	}
+
+    function draw()
+    {
+        var now = new Date;
+		
+		widthMid = canvasWidth / 2;
+		heightMid = canvasHeight / 2;
+		clockDiameter = canvasLength * clockPercCanvas;
+		clockRadius = clockDiameter / 2;
+		
+		/* These 3 variables are for the 3 clock hands */
+		currentSeconds = now.getSeconds() - 15 + (now.getMilliseconds() / 1000);
+		totalSeconds = (now.getMinutes() * 60) + currentSeconds - (59 * 15);
+        totalMinutes = (now.getHours() * 60) + (now.getMinutes()) - 180;
+		
+		/* This variable is for the aesthetics */
+		var colMins = (now.getSeconds() / 60) + now.getMinutes() + ((now.getHours()) * 60) + hourMod;
+		
+		/* Color the sky blue during the day */
+		var backgrMod;
+		var backgrR = 180;
+		var backgrG = 220;
+		var backgrB = 240;
+		/* Color the sky indigo during the morning and evening */
+		if (colMins > 1080 && colMins < 1200) // 6pm to 8pm
+		{
+			backgrMod = colMins - 1080;
+			backgrR = 180 - (backgrMod / 2);
+			backgrG = 220 - backgrMod;
+			backgrB = 240 - (backgrMod / 1.5);
+		}
+		else if (colMins > 300 && colMins < 420) // 5am to 7am
+		{
+			backgrMod = 420 - colMins;
+			backgrR = 180 - (backgrMod / 2);
+			backgrG = 220 - backgrMod;
+			backgrB = 240 - (backgrMod / 1.5);
+		}
+		
+		/* Color the sky black at night */
+		if (colMins >= 1200 || colMins <= 300) // 8pm to 5am
+		{
+			backgrR = 5;
+			backgrG = 5;
+			backgrB = 10;
+		}
+		
+		background(5, 5, 10);
+
+        /* Draw the clock */
+        noStroke();
+        fill(backgrR, backgrG, backgrB);
+        ellipse(widthMid, heightMid, canvasLength * 0.8, canvasLength * 0.8);
+		
+		/* Draw stars at night */
+		stroke(250, 250, 250);
+		if (colMins > 1200 && colMins <= 1440) // 8pm to 12am
+		{
+			for (i = 0; i < iStarMap.length; i++)
+			{
+				if (inBounds(xStarMap[i], yStarMap[i]))
+				{
+					if ((((colMins - 1200) / 60) - iStarMap[i]) > 0)
+					{
+						strokeWeight(((colMins - 1200) / 60) - iStarMap[i]);
+						point(xStarMap[i], yStarMap[i]);
+					}
+				}
+			}
+		}
+		else if (colMins >= 0 && colMins < 240) // 12am to 4am
+		{
+			for (i = 0; i < iStarMap.length; i++)
+			{
+				if (inBounds(xStarMap[i], yStarMap[i]))
+				{
+					if ((((240 - colMins) / 60) - iStarMap[i]) > 0)
+					{
+						strokeWeight(((240 - colMins) / 60) - iStarMap[i]);
+						point(xStarMap[i], yStarMap[i]);
+					}
+				}
+			}
+		}
+		
+		/* Draw sunset and sunrise */
+		var gradient;
+		var gradPerc;
+		var gradR;
+		var gradG;
+		var gradB;
+		var gradBottom = heightMid + clockRadius;
+		if (colMins >= 1140 && colMins < 1200) // 7pm to 8pm
+		{
+			gradient = gradBottom * ((colMins - 1140) / 60);
+			gradPerc = 300 / gradBottom;
+			gradR = backgrR;
+			gradG = backgrG - (gradient * gradPerc);
+			gradB = backgrB - (gradient * gradPerc / 2);
+			for (i = 0; i < gradient; i++)
+			{
+                stroke(gradR, gradG + (i * gradPerc), gradB + (i * gradPerc / 2));
+                line(widthMid - getClockWidth(clockRadius - i) + 1, gradBottom - i,
+                     widthMid + getClockWidth(clockRadius - i) - 2, gradBottom - i);
+			}
+		}
+		else if (colMins <= 360 && colMins > 300) // 5am to 6am
+		{
+			gradient = gradBottom * ((360 - colMins) / 60);
+			gradPerc = 300 / gradBottom;
+			gradR = backgrR;
+			gradG = backgrG - (gradient * gradPerc);
+			gradB = backgrB - (gradient * gradPerc / 2);
+			for (i = 0; i < gradient; i++)
+			{
+				stroke(gradR, gradG + (i * gradPerc), gradB + (i * gradPerc / 2));
+                line(widthMid - getClockWidth(clockRadius - i) + 1, gradBottom - i,
+                     widthMid + getClockWidth(clockRadius - i) - 2, gradBottom - i);
+			}
+		}
+
+		/* Draw sun and moon, colMins == 300 => 5am, colMins == 1200 => 8pm */
+		noStroke();
+		fill(getSunColor(colMins));
+		var sunPerc = 0.7;
+		var sunX = widthMid;
+		var sunY = heightMid + (clockRadius / 1.4);
+        if (colMins > 300 && colMins < 1200)
+        {
+            sunX += (sunPerc * (colMins - ((300 + 1200) / 2)));
+            sunY -= (clockRadius * 1.5) * Math.sin(Math.PI * (colMins - 300) / 900);
+        }
+        else if (colMins <= 300)
+        {
+            sunX += (clockRadius - (sunDiameter * 1.5)) + (sunPerc * (colMins - ((300) / 2)));
+            sunY += (clockRadius * 1.5) * Math.sin(Math.PI * (colMins - 300) / 900);
+        }
+        else if (colMins >= 1200)
+        {
+            sunX += (sunPerc * (colMins - ((1440 + 1200) / 2))) - clockRadius + (sunDiameter * 1.5);
+            sunY += (clockRadius * 1.5) * Math.sin(Math.PI * (colMins - 300) / 900);
+        }
+		ellipse(sunX, sunY, sunDiameter, sunDiameter);
+
+		/* Draw a black arc around ellipse. Used for covering up the sun/moon as it exits the ellipse. */
+		stroke(5, 5, 10);
+		strokeWeight(sunDiameter);
+		noFill();
+		arc(widthMid, heightMid, clockDiameter + sunDiameter - 1, clockDiameter + sunDiameter - 1, 0, 2 * Math.PI);
+		
+		/* Display Storylab logo */
+		if ((totalMinutes > 750 && totalMinutes < 1050) || (totalSeconds > 150 && totalSeconds < 1650))
+		{
+            /* 5:15am to 7:45pm */
+            if (colMins < 320 || colMins > 1180) image(imgWhiteTrans, widthMid - canvasLength / 4.25,
+                heightMid + canvasLength / 20, canvasLength / 2, canvasLength / 5);
+            else image(imgBlackTrans, widthMid - canvasLength / 4.25,
+                heightMid + canvasLength / 20, canvasLength / 2, canvasLength / 5);
+		}
+		else
+		{
+		    /* 5:20am to 7:40pm */
+			if (colMins < 320 || colMins > 1180) image(imgWhiteSolid, widthMid - canvasLength / 4.25,
+                heightMid + canvasLength / 20, canvasLength / 2, canvasLength / 5);
+			else image(imgBlackSolid, widthMid - canvasLength / 4.25,
+                heightMid + canvasLength / 20, canvasLength / 2, canvasLength / 5);
+		}
+		
+		/* Display date */
+		stroke('rgba(0, 0, 0, 0)');
+		fill(0, 0, 0);
+		textAlign(CENTER);
+		textSize(canvasLength / 25);
+		textFont(otherFont);
+		if ((totalSeconds > 2150 && totalSeconds < 3240)
+			|| (totalMinutes > 430 && totalMinutes < 645))
+        {
+            /* 5:10am to 7:50pm */
+            if (colMins < 310 || colMins > 1190) fill('rgba(230, 230, 230, 0.5)');
+            else fill('rgba(0, 0, 0, 0.5)')
+        }
+		else
+        {
+            if (colMins < 310 || colMins > 1190) fill(230, 230, 230);
+            else fill(0, 0, 0);
+        }
+		text(spellMonth(now) + "   " + spellDate(now) + " ,   " + spellYear(now),
+			 widthMid, heightMid - canvasLength / 6.75);
+		textSize(canvasLength / 30);
+		textFont(gokuFont);
+		if ((totalSeconds > 2510 && totalSeconds < 2880)
+			|| (totalMinutes > 500 && totalMinutes < 580))
+        {
+            /* 5:10am to 7:50pm */
+            if (colMins < 310 || colMins > 1190) fill('rgba(230, 230, 230, 0.5)');
+            else fill('rgba(0, 0, 0, 0.5)')
+        }
+		else
+		{
+            if (colMins < 310 || colMins > 1190) fill(230, 230, 230);
+            else fill(0, 0, 0);
+        }
+		text(spellDay(now), widthMid, heightMid - canvasLength / 5);
+
+        /* 5:10am to 7:50pm */
+        if (colMins < 310 || colMins > 1190) stroke(230, 230, 230);
+        else stroke(0, 0, 0);
+		
+		/* Draw the hour hand */
+        xHourHand = canvasLength * clockPercCanvas * 0.3 * Math.cos(2 * Math.PI * totalMinutes / (12 * 60));
+        yHourHand = canvasLength * clockPercCanvas * 0.3 * Math.sin(2 * Math.PI * totalMinutes / (12 * 60));
+		strokeWeight(3.5);
+        line(widthMid, heightMid, xHourHand + widthMid, yHourHand + heightMid);
+
+		/* Draw the minute hand */
+        xMinuteHand = canvasLength * clockPercCanvas * 0.375 * Math.cos(2 * Math.PI * totalSeconds / (60 * 60));
+        yMinuteHand = canvasLength * clockPercCanvas * 0.375 * Math.sin(2 * Math.PI * totalSeconds / (60 * 60));
+		strokeWeight(2);
+        line(widthMid, heightMid, xMinuteHand + widthMid, yMinuteHand + heightMid);
+
+		/* Draw the second hand */
+        xSecondHand = canvasLength * clockPercCanvas * 0.425 * Math.cos(2 * Math.PI * currentSeconds / 60);
+        ySecondHand = canvasLength * clockPercCanvas * 0.425 * Math.sin(2 * Math.PI * currentSeconds / 60);
+		strokeWeight(1);
+        line(widthMid, heightMid, xSecondHand + widthMid, ySecondHand + heightMid);
+		
+		/* Draw the tick marks */
+		strokeWeight(3);
+		for (i = 0; i < 60; i++)
+		{
+			if (i % 5) strokeWeight(1);
+			line(clockDiameter * 0.45 * xMarks[i] + widthMid,
+				 clockDiameter * 0.45 * yMarks[i] + heightMid,
+				 clockDiameter * 0.475 * xMarks[i] + widthMid,
+				 clockDiameter * 0.475 * yMarks[i] + heightMid);
+			if (i % 5) strokeWeight(3);
+		}
+
+    }
+	
+	/* Returns what color the sun or moon should be.
+	   If it's day time, it's yellow.
+	   If it's night time, it's white.
+	   If it's morning or evening, it's a stronger yellow. */
+	function getSunColor(colMins)
+	{
+		var mod = 0;
+		if (colMins > 300 && colMins < 1200) // 5am to 8pm
+		{		
+			if (colMins > 1080) // 6pm
+			{
+				mod = (colMins - 1080) * 1.5;
+			}
+			else if (colMins < 420) // 7am
+			{
+				mod = (420 - colMins) * 1.5
+			}
+			return [240, 240, 200 - mod];
+		}		
+		return [200, 200, 200];
+	}
+	
+	/* Returns half the width of the clock for drawing gradient */
+	function getClockWidth(distance)
+	{
+        return clockRadius * Math.cos(Math.asin(distance / clockRadius));
+	}
+
+	/* Returns true if the coordinate is within the clock circle */
+	function inBounds(x, y)
+    {
+        if (x < widthMid + clockRadius && x > widthMid - clockRadius
+            && y < heightMid + clockRadius && y > heightMid - clockRadius)
+        {
+            var comp = clockRadius * Math.cos(Math.asin((y - heightMid) / clockRadius));
+            if (x < widthMid + comp && x > widthMid - comp) return true;
+        }
+        return false;
+    }
+	
+	function spellMonth(now)
+	{
+		switch (now.getMonth())
+		{
+			case 0: return "J A N U A R Y";
+			case 1: return "F E B R U A R Y";
+			case 2: return "M A R C H";
+			case 3: return "A P R I L";
+			case 4: return "M A Y";
+			case 5: return "J U N E";
+			case 6: return "J U L Y";
+			case 7: return "A U G U S T";
+			case 8: return "S E P T E M B E R";
+			case 9: return "O C T O B E R";
+			case 10: return "N O V E M B E R";
+			case 11: return "D E C E M B E R";
+		}
+		return "Error";
+	}
+	
+	function spellDay(now)
+	{
+		switch (now.getDay())
+		{
+			case 0: return "S U N D A Y";
+			case 1: return "M O N D A Y";
+			case 2: return "T U E S D A Y";
+			case 3: return "W E D N E S D A Y";
+			case 4: return "T H U R S D A Y";
+			case 5: return "F R I D A Y";
+			case 6: return "S A T U R D A Y";
+		}
+		return "Error";
+	}
+	
+	function spellDate(now)
+	{
+		var date = now.getDate();
+		var numbers = ((date - (date % 10)) / 10);
+		if (numbers > 0) numbers = "" + ((date - (date % 10)) / 10) + " " + (date % 10);
+		else numbers = date;
+		while (date > 10) { date -= 10; }
+		switch (date)
+		{
+			case 3: return now.getDate() + " R D";
+			case 2: return now.getDate() + " N D";
+			case 1: return now.getDate() + " S T";
+		}
+		return numbers + " T H";
+	}
+
+	function spellYear(now)
+    {
+        var fullyear = now.getFullYear();
+        var year = fullyear - 2000;
+        year = "" + ((year - (year % 10)) / 10) + " " + (year % 10);
+        return "2 0 " + year;
+    }
+
+</script>
+
+</body>
+<script src='p5.js'></script>
+
+</html>
