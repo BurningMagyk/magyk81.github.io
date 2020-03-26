@@ -26,7 +26,8 @@ ___
 
 # Clock
 [Link to Clock application](https://magyk81.github.io/Clock/index.html)<br>
-An application that displays a clock and changes the background color to reflect the time of day.<br>
+An application that displays a clock and changes the background to reflect the time of day.<br>
+Use the *A* and *D* keys to offset the background's time of day.<br>
 This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
 *Clock* was developed for Storylab Interactive.<br>
 p5.js was created by Lauren McCarthy.<br>
