@@ -25,7 +25,7 @@ The team behind *Portal Pong*'s development:
 ___
 
 # Clock
-[Link to Clock application]()<br>
+[Link to Clock application](https://magyk81.github.io/Clock/index.html)<br>
 An application that displays a clock and changes the background color to reflect the time of day.<br>
 This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
 *Clock* was developed for Storylab Interactive.<br>
