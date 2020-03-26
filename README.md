@@ -36,7 +36,7 @@ Source code for *Clock* can be found in this repository.
 ___
 
 # Bokkusu
-[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)
+[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)<br>
 A two-player puzzle game developed in Unity and C#.<br>
 This game was developed for Storylab Interactive.<br>
 *Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br>
