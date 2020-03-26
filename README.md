@@ -1,37 +1,61 @@
-## Welcome to GitHub Pages
+![alt text][robin]
 
-You can use the [editor on GitHub](https://github.com/magyk81/magyk81.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[robin]: https://github.com/magyk81/magyk81.github.io/blob/master/robin_circle.png
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Robin Campos
+### Software Developer
 
-### Markdown
+<p>Below are a number of projects that Robin has developed or in which Robin was a main contributor in development.</p>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+___
 
-```markdown
-Syntax highlighted code block
+# Portal Pong
+[Click here to watch sample gameplay](http://www.youtube.com/watch?v=5LbnfjEFXmo)<br>
+A two-player competetive variant of the classic video game *Pong*. Takes elements and aesthetic theme from the video game *Portal* by Valve Software.<br>
+*Portal Pong* is written in Python and requires Pygame to run.<br>
+This game was developed for a class project at University of New Mexico.<br><br>
+The team behind *Portal Pong*'s development:
++ Isiah Henderson - isiah.henderson23@gmail.com
++ Jeff McCall - imccall2@unm.edu
++ Robin Campos - magyk81@gmail.com
++ Ben Parmer - bipalmer@unm.edu
 
-# Header 1
-## Header 2
-### Header 3
+[GitHub repository](https://github.com/magyk81/Portal_Pong)
 
-- Bulleted
-- List
+___
 
-1. Numbered
-2. List
+# Clock
+[Link to Clock application]()<br>
+An application that displays a clock and changes the background color to reflect the time of day.<br>
+This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
+*Clock* was developed for Storylab Interactive.<br>
+p5.js was created by Lauren McCarthy.<br>
+Source code for *Clock* can be found in this repository.
 
-**Bold** and _Italic_ and `Code` text
+___
 
-[Link](url) and ![Image](src)
-```
+# Bokkusu
+[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)
+A two-player puzzle game developed in Unity and C#.<br>
+This game was developed for Storylab Interactive.<br>
+*Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br>
+The name "Bokkusu" comes from the Japanese word for "box".<br><br>
+The team behind *Bokkusu*'s development:
++ Joel Castellanos - joel@unm.edu
++ Ben Matthews - ben@electricplayhouse.com
++ Robin Campos - magyk81@gmail.com
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[GitHub repository](https://github.com/magyk81/Bokkusu)
 
-### Jekyll Themes
+___
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/magyk81/magyk81.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# The Lie Made Flesh
+A passion project designed and headed by Robin.<br>
+This game will be a 2D-platformer fighter with elements of RPG.<br>
+The game will adapt a high fantasy story of the same name written by Robin.<br>
+The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
+The team behind *The Lie Made Flesh*'s development:
++ Robin Campos - magyk81@gmail.com
++ Joel Castellanos - joel@unm.edu
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[GitHub repository](https://github.com/magyk81/Droserogis)
