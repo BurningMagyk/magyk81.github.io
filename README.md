@@ -23,7 +23,7 @@ The team behind *The Lie Made Flesh*'s development:
 ___
 
 # Bokkusu
-[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)<br>
+[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)<br><br>
 A two-player puzzle game developed in Unity and C#.<br>
 This game was developed for Storylab Interactive.<br>
 *Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br>
@@ -38,18 +38,18 @@ The team behind *Bokkusu*'s development:
 ___
 
 # Clock
-[Link to Clock application](https://magyk81.github.io/Clock/index.html)<br>
+[Link to Clock application](https://magyk81.github.io/Clock/index.html)<br><br>
 An application that displays a clock and changes the background to reflect the time of day.<br>
 Use the *A* and *D* keys to offset the background's time of day.<br>
 This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
 *Clock* was developed for Storylab Interactive.<br>
-p5.js was created by Lauren McCarthy.<br>
-Source code for *Clock* can be found in this repository.
+p5.js was created by Lauren McCarthy.<br><br>
+[Source code for *Clock*](https://github.com/magyk81/magyk81.github.io/tree/master/Clock) can be found in this repository.
 
 ___
 
 # Portal Pong
-[Click here to watch sample gameplay](http://www.youtube.com/watch?v=5LbnfjEFXmo)<br>
+[Click here to watch sample gameplay](http://www.youtube.com/watch?v=5LbnfjEFXmo)<br><br>
 A two-player competetive variant of the classic video game *Pong*. Takes elements and aesthetic theme from the video game *Portal* by Valve Software.<br>
 *Portal Pong* is written in Python and requires Pygame to run.<br>
 This game was developed for a class project at University of New Mexico.<br><br>
