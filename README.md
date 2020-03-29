@@ -9,29 +9,16 @@
 
 ___
 
-# Portal Pong
-[Click here to watch sample gameplay](http://www.youtube.com/watch?v=5LbnfjEFXmo)<br>
-A two-player competetive variant of the classic video game *Pong*. Takes elements and aesthetic theme from the video game *Portal* by Valve Software.<br>
-*Portal Pong* is written in Python and requires Pygame to run.<br>
-This game was developed for a class project at University of New Mexico.<br><br>
-The team behind *Portal Pong*'s development:
-+ Isiah Henderson - isiah.henderson23@gmail.com
-+ Jeff McCall - imccall2@unm.edu
+# The Lie Made Flesh
+A passion project designed and headed by Robin.<br>
+This game will be a 2D-platformer fighter with elements of RPG.<br>
+The game will adapt a high fantasy story of the same name written by Robin.<br>
+The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
+The team behind *The Lie Made Flesh*'s development:
 + Robin Campos - magyk81@gmail.com
-+ Ben Parmer - bipalmer@unm.edu
++ Joel Castellanos - joel@unm.edu
 
-[GitHub repository](https://github.com/magyk81/Portal_Pong)
-
-___
-
-# Clock
-[Link to Clock application](https://magyk81.github.io/Clock/index.html)<br>
-An application that displays a clock and changes the background to reflect the time of day.<br>
-Use the *A* and *D* keys to offset the background's time of day.<br>
-This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
-*Clock* was developed for Storylab Interactive.<br>
-p5.js was created by Lauren McCarthy.<br>
-Source code for *Clock* can be found in this repository.
+[GitHub repository](https://github.com/magyk81/Droserogis)
 
 ___
 
@@ -50,13 +37,26 @@ The team behind *Bokkusu*'s development:
 
 ___
 
-# The Lie Made Flesh
-A passion project designed and headed by Robin.<br>
-This game will be a 2D-platformer fighter with elements of RPG.<br>
-The game will adapt a high fantasy story of the same name written by Robin.<br>
-The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
-The team behind *The Lie Made Flesh*'s development:
-+ Robin Campos - magyk81@gmail.com
-+ Joel Castellanos - joel@unm.edu
+# Clock
+[Link to Clock application](https://magyk81.github.io/Clock/index.html)<br>
+An application that displays a clock and changes the background to reflect the time of day.<br>
+Use the *A* and *D* keys to offset the background's time of day.<br>
+This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
+*Clock* was developed for Storylab Interactive.<br>
+p5.js was created by Lauren McCarthy.<br>
+Source code for *Clock* can be found in this repository.
 
-[GitHub repository](https://github.com/magyk81/Droserogis)
+___
+
+# Portal Pong
+[Click here to watch sample gameplay](http://www.youtube.com/watch?v=5LbnfjEFXmo)<br>
+A two-player competetive variant of the classic video game *Pong*. Takes elements and aesthetic theme from the video game *Portal* by Valve Software.<br>
+*Portal Pong* is written in Python and requires Pygame to run.<br>
+This game was developed for a class project at University of New Mexico.<br><br>
+The team behind *Portal Pong*'s development:
++ Isiah Henderson - isiah.henderson23@gmail.com
++ Jeff McCall - imccall2@unm.edu
++ Robin Campos - magyk81@gmail.com
++ Ben Parmer - bipalmer@unm.edu
+
+[GitHub repository](https://github.com/magyk81/Portal_Pong)
