@@ -23,7 +23,9 @@ The team behind *The Lie Made Flesh*'s development:
 ___
 
 # Bokkusu
-[Click here to watch trailer](https://www.youtube.com/watch?v=DflFLcE9qJ0)<br><br>
+[Click here to watch sample gameplay](https://youtu.be/Cv-jjsrRf2E)<br>
+[Click here to download playable build](http://www.mediafire.com/file/wcwleaphjnnd1fb/Bokkusu.zip/file)<br>
+There was a trailer for *Bokkusu* on StoryLab Interactive's YouTube channel, but the whole channel was taken down.<br><br>
 A two-player puzzle game developed in Unity and C#.<br>
 This game was developed for Storylab Interactive.<br>
 *Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br>
