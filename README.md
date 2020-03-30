@@ -77,3 +77,15 @@ The team behind *Dauntless*'s development:
 + Noah Tijerina
 
 [GitLab repository](https://gitlab.com/magyk81/Dauntless)
+
+___
+
+# Wario Clone
+[Click here to download playable build](http://www.mediafire.com/file/e3ejf6scksfxdfr/Wario_Clone.zip/file)<br><br>
+A 2D-platformer game developed in Unity and C#.<br>
+This game was developed for a class project at University of New Mexico.<br><br>
+The team behind *Wario Clone*'s development:
++ Robin Campos
++ Michael Roybal
+
+[GitLab repository](https://gitlab.com/magyk81/Wario_Clone)
