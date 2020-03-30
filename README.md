@@ -66,8 +66,8 @@ ___
 # Dauntless
 [Click here to watch trailer](https://www.youtube.com/watch?v=UHjMnWaz_J8)<br>
 [Click here to download playable build](http://www.mediafire.com/file/e18abd02h99cn6l/Dauntless_build.zip/file)<br><br>
-This game is a one-player first-person dungeon crawler with elements of horror and a sword-and-sorcery setting.<br>
-Not to be confused with the game of the same name developed by Phoenix Labs and published by Epic Games.
+This game is a one-player first-person dungeon crawler with elements of horror in a sword-and-sorcery setting.<br>
+Not to be confused with the game of the same name developed by Phoenix Labs and published by Epic Games.<br>
 *Dauntless* is written in Unity and C#.<br>
 This game was developed for a class project at University of New Mexico.<br><br>
 The team behind *Dauntless*'s development:
