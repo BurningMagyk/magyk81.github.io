@@ -35,7 +35,7 @@ The team behind *Bokkusu*'s development:
 + Ben Matthews - ben@electricplayhouse.com
 + Robin Campos - magyk81@gmail.com
 
-[GitHub repository](https://github.com/magyk81/Bokkusu)
+[GitHub repository](https://github.com/castellanos70/Bokkusu)
 
 ___
 
