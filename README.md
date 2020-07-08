@@ -24,7 +24,7 @@ ___
 
 # Bokkusu
 [Click here to watch sample gameplay](https://youtu.be/Cv-jjsrRf2E)<br>
-[Click here to download playable build](http://www.mediafire.com/file/wcwleaphjnnd1fb/Bokkusu.zip/file)<br>
+[Click here to download playable build from itch.io](https://magyk81.itch.io/bokkusu)<br>
 There was a trailer for *Bokkusu* on StoryLab Interactive's YouTube channel, but the whole channel was taken down.<br><br>
 A two-player puzzle game developed in Unity and C#.<br>
 This game was developed for Storylab Interactive.<br>
