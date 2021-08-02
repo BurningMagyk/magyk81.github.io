@@ -11,9 +11,9 @@ ___
 
 # The Lie Made Flesh
 A passion project designed and headed by Robin.<br>
-This game will be a 2D-platformer fighter with elements of RPG.<br>
-The game will adapt a high fantasy story of the same name written by Robin.<br>
-The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
+This game was going to be a 2D-platformer fighter with elements of RPG.<br>
+The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br>
+The project has been abandoned.<br><br>
 The team behind *The Lie Made Flesh*'s development:
 + Robin Campos - magyk81@gmail.com
 + Joel Castellanos - joel@unm.edu
