@@ -1,9 +1,10 @@
-[robin]: https://github.com/magyk81/magyk81.github.io/blob/master/robin_circle.png
+[robin]: https://i.ibb.co/5kJ4B6P/robin-circle.png
 [wizzers_shot_1]: https://i.ibb.co/JvzbFvB/board.png
 [wizzers_shot_2]: https://i.ibb.co/Wg9kTVB/hand-smaller-cards.png
-[flesh_shot_1]: 
-[flesh_shot_2]: 
 [bokkusu_shot]: https://img.itch.zone/aW1nLzM0MTU3ODkucG5n/original/TnGDPw.png
+[dauntless_shot_1]: https://i.ibb.co/jk5kdT9/dauntless-1.png
+[dauntless_shot_2]: https://i.ibb.co/s51qjDm/dauntless-2.png
+[wario_shot]: https://i.ibb.co/60zQ84t/wario.png
 
 ![alt text][robin]
 
@@ -81,8 +82,6 @@ The team behind *Portal Pong*'s development:
 + Jeff McCall - imccall2@unm.edu
 + Robin Campos - magyk81@gmail.com
 + Ben Parmer - bipalmer@unm.edu
-
-![alt_text][pong_shot]
 
 [GitHub repository](https://github.com/magyk81/Portal_Pong)
 
