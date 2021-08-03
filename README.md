@@ -35,9 +35,6 @@ The team behind *The Lie Made Flesh*'s development:
 + Robin Campos - magyk81@gmail.com
 + Joel Castellanos - joel@stellarscience.com
 
-![alt_text][flesh_shot_1]
-![alt_text][flesh_shot_2]
-
 [GitHub repository](https://github.com/magyk81/Droserogis)
 
 ___
