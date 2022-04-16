@@ -1,7 +1,10 @@
 [robin]: https://i.ibb.co/3Y49X09/me-circle-small.png
 [wizzers_shot_1]: https://i.ibb.co/JvzbFvB/board.png
 [wizzers_shot_2]: https://i.ibb.co/Wg9kTVB/hand-smaller-cards.png
-[bokkusu_shot]: https://img.itch.zone/aW1nLzM0MTU3ODkucG5n/original/TnGDPw.png
+[bokkusu_shot_1]: https://i.ibb.co/WcM2XNg/bokkusu-01.png
+[bokkusu_shot_2]: https://i.ibb.co/5xRtwrS/bokkusu-02.png
+[bokkusu_shot_3]: https://i.ibb.co/G7p9JSY/bokkusu-03.png
+[bokkusu_shot_4]: https://i.ibb.co/ss5fnn8/bokkusu-04.png
 [clock_shot_1]: https://i.ibb.co/hD8rZMb/clock-01-small.png
 [clock_shot_2]: https://i.ibb.co/y02BvjF/clock-02-small.png
 [clock_shot_3]: https://i.ibb.co/XbqPz1F/clock-03-small.png
@@ -55,7 +58,10 @@ The team behind *Bokkusu*'s development:
 + Ben Matthews - ben@electricplayhouse.com
 + Robin Campos - magyk81@gmail.com
 
-![alt_text][bokkusu_shot]
+![alt_text][bokkusu_shot_1]
+![alt_text][bokkusu_shot_2]
+![alt_text][bokkusu_shot_3]
+![alt_text][bokkusu_shot_4]
 
 [GitHub repository](https://github.com/castellanos70/Bokkusu)
 
