@@ -1,9 +1,12 @@
-[robin]: https://i.ibb.co/5kJ4B6P/robin-circle.png
+[robin]: https://i.ibb.co/3Y49X09/me-circle-small.png
 [wizzers_shot_1]: https://i.ibb.co/JvzbFvB/board.png
 [wizzers_shot_2]: https://i.ibb.co/Wg9kTVB/hand-smaller-cards.png
 [bokkusu_shot]: https://img.itch.zone/aW1nLzM0MTU3ODkucG5n/original/TnGDPw.png
-[dauntless_shot_1]: https://i.ibb.co/jk5kdT9/dauntless-1.png
-[dauntless_shot_2]: https://i.ibb.co/s51qjDm/dauntless-2.png
+[clock_shot_1]: https://i.ibb.co/hD8rZMb/clock-01-small.png
+[clock_shot_2]: https://i.ibb.co/y02BvjF/clock-02-small.png
+[clock_shot_3]: https://i.ibb.co/XbqPz1F/clock-03-small.png
+[dauntless_shot_1]: https://i.ibb.co/bNM5C2Z/dauntless-01.png
+[dauntless_shot_2]: https://i.ibb.co/TMxmCF4/dauntless-02.png
 [wario_shot]: https://i.ibb.co/60zQ84t/wario.png
 
 ![alt text][robin]
@@ -23,14 +26,15 @@ It is being written in Unity and C#.<br>
 ![alt_text][wizzers_shot_1]
 ![alt_text][wizzers_shot_2]
 
-[GitHub repository](https://github.com/magyk81/Magick_and_Wizzers)
+[GitHub repository](https://github.com/magyk81/Magick_and_Wizzers)<br>
+[Game design document](https://docs.google.com/document/d/1Lq5RKvm81bv_P5wICxD30iqIaK_AYjShUu8tdKCvsDg/edit?usp=sharing) (Feel free to leave a comment!)
 
 ---
 
 # The Lie Made Flesh
 An abandoned passion project designed and headed by Robin.<br>
 This game was going to be a 2D-platformer fighter with elements of RPG.<br>
-The project is written in Java using Intellij. Uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
+The project is written in Java using Intellij. It uses OpenJDK 13, JavaFX, and LWJGL.<br><br>
 The team behind *The Lie Made Flesh*'s development:
 + Robin Campos - magyk81@gmail.com
 + Joel Castellanos - joel@stellarscience.com
@@ -45,8 +49,7 @@ ___
 There was a trailer for *Bokkusu* on StoryLab Interactive's YouTube channel, but the whole channel was taken down.<br><br>
 A two-player puzzle game developed in Unity and C#.<br>
 This game was developed for Storylab Interactive.<br>
-*Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br>
-The name "Bokkusu" comes from the Japanese word for "box".<br><br>
+*Bokkusu* is currently featured in the AGDG arcade cabinet stationed in Meow Wolf in Santa Fe, NM.<br><br>
 The team behind *Bokkusu*'s development:
 + Joel Castellanos - joel@stellarscience.com
 + Ben Matthews - ben@electricplayhouse.com
@@ -65,7 +68,12 @@ Use the *A* and *D* keys to offset the background's time of day.<br>
 This was written in JavaScript using the graphics library [p5.js](p5js.org).<br>
 *Clock* was developed for Storylab Interactive.<br>
 p5.js was created by Lauren McCarthy.<br><br>
-[Source code for *Clock*](https://github.com/magyk81/magyk81.github.io/tree/master/Clock) can be found in this repository.
+
+![alt_text][clock_shot_1]
+![alt_text][clock_shot_2]
+![alt_text][clock_shot_3]
+
+[Source code for *Clock*](https://github.com/magyk81/magyk81.github.io/tree/master/Clock).
 
 ___
 
